@@ -1,4 +1,4 @@
-import { passenger } from "../Passengers/passenger";
+import { passenger } from "../Booking/passenger";
 export class seat{
     private seatId:number;
     constructor(seatId:number){
