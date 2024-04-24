@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Department } from "./department";
 import { employees } from "./employee";
 import { gate } from "./gate";
@@ -32,3 +33,16 @@ let PNC = new Airport("pnc-000018", "PNC Airport");
 PNC.addDepartMent(airlineDepartment);
 PNC.addGate(A1);
 console.log(PNC);
+=======
+import { employee } from "./employee";
+
+export class airport{
+    private airportCode: string;
+    private airportName: string;
+
+    constructor(airportCode: string, airportName: string){
+        this.airportCode = airportCode;
+        this.airportName = airportName;
+    }
+}
+>>>>>>> 1a76b02ded6aff8b397473b7c19374ea8a16547a
