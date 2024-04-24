@@ -1,15 +1,24 @@
 import { gender } from "./gender";
 
-export class Person{
-    private firstName: string;
-    private lastName: string;
-    private gender: gender;
-    private age: number;
+export abstract class Person{
+    protected firstName: string;
+    protected lastName: string;
+    protected gender: gender;
+    protected age: number;
 
     constructor(firstName: string, lastName: string, gender: gender, age: number){
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
+    }
+    getFullName(){
+        return this.firstName + " " + this.lastName;
+    }
+    getYear(){
+        return this.age;
+    }
+    getGender(){
+        return this.gender;
     }
 }
