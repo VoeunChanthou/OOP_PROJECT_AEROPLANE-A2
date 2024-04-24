@@ -3,6 +3,12 @@ import { Person } from "../Booking/person";
 import { gender } from "../Booking/gender";
 
 export class employees extends Person {
+    static changeSalary(employee: employees, salary: number) {
+        throw new Error("Method not implemented.");
+    }
+    getEmployeeId() {
+        throw new Error("Method not implemented.");
+    }
     private EmployeeId: string;
     private position: jobCategories;
     private salary: number;
@@ -20,15 +26,20 @@ export class employees extends Person {
 
 
     getAge(){
-        //todo//
+        return this.age;
+       
     }
 
     getPosition(){
-        //todo//
+        return this.position;
     }
 
     fullName(){
-        //todo//
+        return this.firstName + " " + this.lastName;
+    }
+
+    getSalary(){
+        return this.salary;
     }
 }
 

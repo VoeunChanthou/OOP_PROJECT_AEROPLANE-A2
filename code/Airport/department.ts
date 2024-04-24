@@ -1,6 +1,6 @@
 import { employees } from "./employee";
 
-export class Department {
+export class Department{
     private departmentName: string;
     private employees: employees[]=[];
     private manager: employees;
@@ -19,11 +19,11 @@ export class Department {
     }
 
     getEmployeeById(employeeId: string){
-        //todo//
+      return this.employees[employeeId];
     }
 
     getSalary(employee: employees){
-        //todo//
+        return employee.getSalary();
     }
 
     getEmployees(){
@@ -31,6 +31,6 @@ export class Department {
     }
 
     changeSalary(employee: employees, salary: number){
-        //todo//
+        return employees.changeSalary(employee, salary);
     }
 }
