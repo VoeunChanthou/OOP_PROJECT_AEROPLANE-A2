@@ -1,4 +1,4 @@
-import { flight } from "../Airport/flight";
+import { flight } from "../code/flight/flight";
 export class ticket{
     private flight: flight[]=[];
     
