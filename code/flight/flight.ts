@@ -4,6 +4,7 @@ import { Airport } from '../Airport/airport';
 import { date } from '../date/date';
 import { time } from '../date/time';
 
+
 export class flight {
     private departureAddress: Airport;
     private arrivalAddress: Airport;
