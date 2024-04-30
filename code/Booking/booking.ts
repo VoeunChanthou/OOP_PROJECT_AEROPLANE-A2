@@ -1,13 +1,26 @@
-import { tickettype } from "./tickettype"
+import { tickettype } from "./tickettype";
 
 export class booking{
-    private ticketType:tickettype;
-    private ticketPrice:number;
     private date: string;
+    private seatType: tickettype;
+    private price: number;
+    private isPay?: boolean;
     
-    constructor(ticketType:tickettype, ticketPrice:number, date:string){
-        this.ticketType = ticketType;
-        this.ticketPrice = ticketPrice;
+    constructor(date:string, seatType: tickettype){
         this.date = date;
+        this.seatType = seatType;
+    }
+
+    cancelBooking(){
+        if(this.isPay){
+            this.price = 0;
+            this.isPay = false;
+        }
+    }
+
+    payForTicket(price: number){
+        this.price = price;
+        this.isPay = true;
     }
 }
+

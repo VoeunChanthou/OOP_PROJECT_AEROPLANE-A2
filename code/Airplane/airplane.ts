@@ -1,22 +1,15 @@
 import { seat } from "./seat";
-export class airplan {
+export class airplane {
     private airplanId:number;
     private airplanName:string;
-    private gate: number;
     private seats: seat[];
     
     constructor(airplanId:number, airplanName:string, gate:number) {
         this.airplanId = airplanId;
         this.airplanName = airplanName;
-        this.gate = gate;
-        
-
     }
     getPilot(){
         return this.airplanName;
-    }
-    getChef(){
-        return this.gate;
     }
     getWeight(){
         return this.airplanId;

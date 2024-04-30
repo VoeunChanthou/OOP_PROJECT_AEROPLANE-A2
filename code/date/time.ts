@@ -1,4 +1,4 @@
-import { flight } from "./flight";
+import { flight } from "../flight/flight";
 
 export class time {
     private hours: number;

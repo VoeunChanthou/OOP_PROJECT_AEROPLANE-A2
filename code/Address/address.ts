@@ -1,4 +1,3 @@
-import { flight } from "./flight";
 
 export class address {
     private country: string;

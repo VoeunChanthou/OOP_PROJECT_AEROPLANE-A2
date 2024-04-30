@@ -1,4 +1,3 @@
-import { flight } from "./flight";
 
 export class date {
     private day: string;

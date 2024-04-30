@@ -1,6 +1,6 @@
 import { jobCategories } from "./jobCategories";
-import { Person } from "../Booking/person";
-import { gender } from "../Booking/gender";
+import { Person } from "../Person/person";
+import { gender } from "../Person/gender";
 
 export class employees extends Person {
     private EmployeeId: string;
