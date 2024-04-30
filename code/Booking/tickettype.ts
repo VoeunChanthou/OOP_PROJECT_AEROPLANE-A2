@@ -1,5 +1,5 @@
 
 export enum tickettype{
-    aconomic_classic,
-    aconomic_flex
+    economic_classic,
+    economic_flex
 }

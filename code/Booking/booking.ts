@@ -1,16 +1,16 @@
+import { date } from "../date/date";
 import { tickettype } from "./tickettype";
 
 export class booking{
-    private date: string;
+    public Bookintdate: date;
     private seatType: tickettype;
-    private price: number;
+    private price?: number;
     private isPay?: boolean;
     
-    constructor(date:string, seatType: tickettype){
-        this.date = date;
+    constructor(date:date, seatType: tickettype){
+        this.Bookintdate = date;
         this.seatType = seatType;
     }
-
     cancelBooking(){
         if(this.isPay){
             this.price = 0;

@@ -1,14 +1,15 @@
 import { booking } from "../Booking/booking";
+import { gender } from "../Person/gender";
+import { Person } from "../Person/person";
 
-export class passenger{
+export class passenger extends Person{
     private passengerNumber: number;
-    private seatNumber: number;
     private passport: boolean;
-    private booking?: booking;
+    private booking?: booking[]=[];
 
-    constructor(passengerNumber: number, seatNumber: number, passport: boolean){
+    constructor(passengerNumber: number, firstName: string, lastName: string, gender: gender, age: number, passport: boolean){
+        super(firstName, lastName, gender, age);
         this.passengerNumber = passengerNumber;
-        this.seatNumber = seatNumber;
         this.passport  = passport;
     }
     getName(): string{
@@ -16,6 +17,6 @@ export class passenger{
     }
     
     customerBooking(booking: booking){
-        this.booking = booking;
+        this.booking?.push(booking);
     }
 }

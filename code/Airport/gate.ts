@@ -1,9 +1,9 @@
 
 
 export class gate {
-    private gate: string;
+    private gateNumber: string;
 
     constructor(gate: string) {
-        this.gate = gate;
+        this.gateNumber = gate;
     }
 }

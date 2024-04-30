@@ -20,5 +20,19 @@ export class Airport {
         this.gates.push(gate);
     }
 
+    addAirline(airline: airline){
+        this.airlines.push(airline);
+    }
+
+    getAirlines(name: string){
+        let airline: airline[]=[];
+        for(let value of this.airlines){
+            if(value.getAirlineName().toLocaleLowerCase().includes(name.toLocaleLowerCase())){
+                airline.push(value);
+            }
+        }
+        return airline;
+    }
+
 }
 

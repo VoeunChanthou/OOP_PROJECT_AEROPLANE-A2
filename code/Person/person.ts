@@ -6,7 +6,7 @@ export abstract class Person{
     protected gender: gender;
     protected age: number;
 
-    constructor(firstName: string, lastName: string, gender: gender, age: number){
+    constructor(firstName: string, lastName: string, age: number, gender: gender){
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
