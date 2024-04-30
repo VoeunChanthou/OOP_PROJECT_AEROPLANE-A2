@@ -20,18 +20,19 @@ export class employees extends Person {
 
 
     getAge(){
-        //todo//
+        return this.age;
+       
     }
 
     getPosition(){
-        //todo//
+        return this.position;
     }
 
     fullName(){
-        //todo//
+        return this.firstName + " " + this.lastName;
+    }
+
+    getSalary(){
+        return this.salary;
     }
 }
-
-
-let Chanthou = new employees('001',jobCategories.manager, "chanthou", "voeun", 18, gender.male, 2000);
-console.log(Chanthou);
