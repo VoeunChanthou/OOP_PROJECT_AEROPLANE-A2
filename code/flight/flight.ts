@@ -1,10 +1,13 @@
-import { airline } from '../Company/airline';
+import { airline } from '../Airline/airline';
 import { airplane } from '../Airplane/airplane';
 import { Airport } from '../Airport/airport';
 import { date } from '../date/date';
 import { time } from '../date/time';
+import { ticket } from '../Ticket/ticket';
+
 
 export class flight {
+    private flightNumber: string;
     private departureAddress: Airport;
     private arrivalAddress: Airport;
     private checkIn : boolean;
@@ -13,21 +16,21 @@ export class flight {
     private arrivedTime: time;
     private airplane: airplane;
     private airline: airline;
+    private tickets: ticket[]=[];
 
 
-    constructor(departureAddress: Airport, arrivalAddress: Airport, checkIn: boolean, date: date, startingTime: time, arrivedTime: time, airplane: airplane, airline: airline) {
+    constructor(departureAddress: Airport, date: date, startingTime: time) {
         this.departureAddress = departureAddress;
-        this.arrivalAddress = arrivalAddress;
-        this.checkIn = checkIn;
         this.date = date;
         this.startingTime = startingTime;
-        this.arrivedTime = arrivedTime;
-        this.airplane = airplane;
-        this.airline = airline;
     }
 
     isCheckIn(): boolean{
         return true;
+    }
+
+    ticketOrder(ticket: ticket){
+        this.tickets.push(ticket);
     }
 
     getDepartureAddress(){
@@ -37,4 +40,6 @@ export class flight {
     getArrivalAddress(){
         return this.arrivalAddress;
     }
+
+
 }

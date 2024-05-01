@@ -6,7 +6,7 @@ import { jobCategories } from "../Employee/jobCategories";
 
 export class airline {
     private airlineName: string;
-    private bookings?: booking[]=[];
+    private bookings: booking[]=[];
     private employees: employees[]=[];
     private airlineManager?: employees;
 
@@ -25,6 +25,10 @@ export class airline {
         this.employees.push(employee);
     }
 
+    Booking(booking: booking){
+        this.bookings.push(booking);
+    }
+
     totalSalaryForpayment(): string{
         let totalSalary:number = 0;
         for(let employee of this.employees){
@@ -41,6 +45,14 @@ export class airline {
             }
         }
         return list;
+    }
+
+    getDetailOfPassenger(bookingReference: string){
+        for(let booking of this.bookings){
+            if(booking.bookReference == bookingReference){
+                return booking.getPassenger();
+            }
+        }
     }
 
 }

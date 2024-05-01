@@ -9,7 +9,7 @@ import { flight } from "./flight/flight";
 import { flightTrip } from "./flight/flightTrip";
 import { luggage } from "./passenger/luggage";
 import { passenger } from "./passenger/passenger";
-import { trip } from "./tirp/trip";
+import { trip } from "./trip/trip";
 import { gender } from "./Person/gender";
 import { jobCategories } from "./Employee/jobCategories";
 import { seat } from "./Airplane/seat";
@@ -17,6 +17,7 @@ import { tickettype } from "./Booking/tickettype";
 import { booking } from "./Booking/booking";
 import { time } from "./date/time";
 import { gate } from "./Airport/gate";
+import { ticket } from "./Ticket/ticket"; 
 
 ///create object//
 
@@ -46,7 +47,8 @@ let trip1 = new trip(new address("Cambodia", "Phnom Penh", "371"), new address("
 
 
 //create booking
-let booking1 = new booking(new date("Monday", "10", 2024), tickettype.economic_flex);
+let booking1 = new booking("AK2",new date("Monday", "10", 2024), tickettype.economic_flex, Ny);
+let booking2 = new booking("JP23" ,new date("Monday", "10", 2024), tickettype.economic_flex, Samorn);
 booking1.payForTicket(1000);
 // booking1.cancelBooking();
 
@@ -63,6 +65,8 @@ airline1.addEmployee(pilot1);
 airline1.addEmployee(pilot2);
 airline1.addEmployee(pilot3);
 airline1.addEmployee(Nika);
+airline1.Booking(booking1);
+airline1.Booking(booking2);
 
 let airline2 = new airline("KPT airline");
 airline2.setManager(Chanthou);
@@ -74,16 +78,33 @@ airline2.setManager(Chanthou);
 // console.log(airline1.employeeDetails(jobCategories.pilot));
 
 //create airport
-let airport1 = new Airport("AFC", "PNC AIRPORT", new address("Cambodia", "Kompong Thom", "number 6"));
+let airport1 = new Airport("AFC", "PNC AIRPORT", new address("Cambodia", "PP", "number 6"));
 airport1.addAirline(airline1);
 airport1.addAirline(airline2);
 airport1.addGate(gate1);
 airport1.addGate(gate2);
 airport1.addGate(gate3);
 
+let airport2 =  new Airport("AFC1", "KTP AIRPORT", new address("Cambodia", "KPT", "Number 6"))
+
 //get airline in airport by searching
 // console.log(airport1.getAirlines("P"));
 
 
+// console.log(airline1);
 
+//create trip 
+Ny.customerBooking(booking1);
+
+//get detail information of passenger
+airline1.getDetailOfPassenger("AK2");
+
+
+//create flight
+let flight1 = new flight(airport1, new date("MON", "10", 2024), new time(11, 50));
+
+
+//create ticket
+let ticket1 = new ticket(flight1);
+trip1.addTicket(ticket1);
 
