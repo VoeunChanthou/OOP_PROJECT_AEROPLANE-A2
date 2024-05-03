@@ -1,28 +1,22 @@
 import { seat } from "./seat";
+
+
 export class airplane {
-    private airplanId:number;
+    private airplanId:string;
     private airplanName:string;
-    private seats: seat[];
+    public numberOfseat: number;
+    private seats?: seat[];
     
-    constructor(airplanId:number, airplanName:string, gate:number) {
+    constructor(airplanId:string, airplanName:string, numberOfseat:number) {
         this.airplanId = airplanId;
         this.airplanName = airplanName;
+        this.numberOfseat = numberOfseat;
     }
-    getPilot(){
+    getairPlaneId(){
+        return this.airplanId;
+    }
+    getAirplenName(){
         return this.airplanName;
     }
-    getWeight(){
-        return this.airplanId;
-    }
-    getSeat(){
-        return this.airplanId;
-    }
-    getAllpassenger(){
-        return this.airplanId;
-    }
-    getPassengerbyName(){
-        return this.airplanName;
-    }
-    
     
 }

@@ -5,5 +5,6 @@ export enum jobCategories{
     manager,
     chef,
     co_pilot,
-    crew
+    crew,
+    attendant
 }

@@ -1,8 +1,10 @@
 
 
 export enum meal {
-    breakfast,
-    lunch,
-    dinner,
-    snack
+    vegetarian,
+    vegan,
+    dairy_free,
+    Halal,
+    Kosher,
+    so_forth
 }

@@ -18,6 +18,8 @@ import { booking } from "./Booking/booking";
 import { time } from "./date/time";
 import { gate } from "./Airport/gate";
 import { ticket } from "./Ticket/ticket"; 
+import { meal } from "./flight/meal";
+import { rout } from "./Rout/rout";
 
 ///create object//
 
@@ -43,6 +45,7 @@ let Vanny = new employees("A22", jobCategories.chef, "Vanny", "Chan", 21, gender
 
 //create trip
 let trip1 = new trip(new address("Cambodia", "Phnom Penh", "371"), new address("England", "London", "293"));
+let trip2 = new trip(new address("Spain", "Barcelona", "371"), new address("England", "London", "293"));
 
 
 
@@ -56,6 +59,7 @@ booking1.payForTicket(1000);
 let gate1 = new gate("UCL");
 let gate2 = new gate("PL");
 let gate3 = new gate("MP40");
+
 
 //create airline
 let airline1 = new airline("PNC airline");
@@ -101,10 +105,65 @@ airline1.getDetailOfPassenger("AK2");
 
 
 //create flight
-let flight1 = new flight(airport1, new date("MON", "10", 2024), new time(11, 50));
+let flight1 = new flight("KO168" ,airport1, new date("MON", "10", 2024), new time(11, 50), new gate("A22"));
+// flight1.getGate();
 
 
 //create ticket
-let ticket1 = new ticket(flight1);
+let ticket1 = new ticket(flight1, gate1);
 trip1.addTicket(ticket1);
 
+booking1.addTrip(trip1);
+booking2.addTrip(trip2);
+
+//passenger get gateNumber
+// Ny.getGateNumber("KO168", new date("MON", "10", 2024));
+
+//create flightTrip
+let flightTrip1 = new flightTrip(airline1);
+flightTrip1.addMeals(meal.vegetarian)
+flightTrip1.addMeals(meal.vegetarian)
+flightTrip1.addMeals(meal.vegetarian)
+flightTrip1.addMeals(meal.vegetarian)
+flightTrip1.addMeals(meal.vegetarian)
+flightTrip1.addMeals(meal.vegetarian)
+flightTrip1.addMeals(meal.vegan)
+flightTrip1.addMeals(meal.vegan)
+flightTrip1.addMeals(meal.vegan)
+flightTrip1.addMeals(meal.dairy_free)
+flightTrip1.addMeals(meal.dairy_free)
+flightTrip1.addMeals(meal.Halal)
+flightTrip1.addMeals(meal.Halal)
+flightTrip1.addMeals(meal.Halal)
+flightTrip1.addMeals(meal.Kosher)
+flightTrip1.addMeals(meal.so_forth)
+
+flightTrip1.addPilot(pilot1)
+flightTrip1.addPilot(pilot2)
+
+//add get flight from pilot
+pilot1.addFlight(flightTrip1);
+pilot1.addFlight(flightTrip1);
+pilot2.addFlight(flightTrip1);
+// console.log(pilot1.getFlights(pilot1));
+// console.log(pilot2.getFlights(pilot2));
+
+
+//get number of each meal
+// console.log(flightTrip1.getNumberOfmeal(meal.Halal));
+// console.log(flightTrip1.getNumberOfmeal(meal.Kosher));
+
+
+//get passenger have return the ticket
+// console.log(airline1.getTicketReturn());
+
+
+//create airplane
+let airplane1 = new airplane("168K", "PC03", 100);
+
+//create rout
+let rout1 = new rout(airplane1);
+
+//add rout to flight
+flight1.addRout(rout1);
+// console.log(flight1.getAirplane());

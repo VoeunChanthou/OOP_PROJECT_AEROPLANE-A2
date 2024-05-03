@@ -2,6 +2,7 @@ import { date } from "../date/date";
 import { tickettype } from "./tickettype";
 import { passenger } from "../passenger/passenger";
 import { trip } from "../trip/trip";
+import { ticket } from "../Ticket/ticket";
 
 export class booking{
     public bookReference: string;
@@ -37,6 +38,22 @@ export class booking{
 
     getPassenger(){
         return this.passenger;
+    }
+
+    getTrip(){
+        return this.Trip?.getFlight();
+    }
+
+    getDate(){
+        return this.Trip?.getDate();
+    }
+
+    getGate(){
+        return this.Trip?.getGate();
+    }
+
+    getReturnTicket(){
+        return this.Trip?.returnTicket();
     }
 
 }

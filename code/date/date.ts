@@ -1,8 +1,8 @@
 
 export class date {
-    private day: string;
-    private month: string;
-    private year: number;
+    public day: string;
+    public month: string;
+    public year: number;
 
     constructor(day: string, month: string, year: number){
         this.day = day;
@@ -22,4 +22,11 @@ export class date {
         return this.year;
     }
 
+    compareDate(date: date){
+        if(date.day === this.day && date.month === this.month && date.year === this.year){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

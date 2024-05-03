@@ -55,4 +55,14 @@ export class airline {
         }
     }
 
+    getTicketReturn(){
+        let returnTicket: number=0;
+        for(let booking of this.bookings){
+            if(booking.getReturnTicket()){
+                returnTicket ++;
+            }
+        }
+        return returnTicket;
+    }
+
 }
