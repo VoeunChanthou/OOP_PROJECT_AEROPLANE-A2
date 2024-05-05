@@ -69,6 +69,7 @@ airline1.addEmployee(pilot1);
 airline1.addEmployee(pilot2);
 airline1.addEmployee(pilot3);
 airline1.addEmployee(Nika);
+airline1.addEmployee(Vanny);
 airline1.Booking(booking1);
 airline1.Booking(booking2);
 
@@ -105,7 +106,7 @@ airline1.getDetailOfPassenger("AK2");
 
 
 //create flight
-let flight1 = new flight("KO168" ,airport1, new date("MON", "10", 2024), new time(11, 50), new gate("A22"));
+let flight1 = new flight("KO168" ,airport1, airport2, new date("MON", "10", 2024), new time(11, 50), new gate("A22"));
 // flight1.getGate();
 
 
@@ -167,3 +168,6 @@ let rout1 = new rout(airplane1);
 //add rout to flight
 flight1.addRout(rout1);
 // console.log(flight1.getAirplane());
+
+// console.log(airline1.getChef());
+console.log(flight1);

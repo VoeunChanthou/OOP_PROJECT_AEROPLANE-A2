@@ -2,6 +2,7 @@ import { address } from "../Address/address";
 import { booking } from "../Booking/booking";
 import { employees } from "../Employee/employee";
 import { jobCategories } from "../Employee/jobCategories";
+import { meal } from "../flight/meal";
 
 
 export class airline {
@@ -23,6 +24,17 @@ export class airline {
 
     addEmployee(employee: employees){
         this.employees.push(employee);
+    }
+
+    getChef(){
+        let chefs: employees[]=[];
+        for(let chef of this.employees){
+            if(chef.getPosition() == jobCategories.chef){
+                chefs.push(chef);
+            }
+        }
+        return chefs;
+
     }
 
     Booking(booking: booking){

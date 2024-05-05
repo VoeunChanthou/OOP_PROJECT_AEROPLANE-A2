@@ -21,9 +21,10 @@ export class flight {
     private flightTrip?: flightTrip;
 
 
-    constructor(flightNumber: string ,departureAddress: Airport, date: date, startingTime: time, gate: gate) {
+    constructor(flightNumber: string ,departureAddress: Airport, arrivalAddress: Airport, date: date, startingTime: time, gate: gate) {
         this.flightNumber = flightNumber;
         this.departureAddress = departureAddress;
+        this.arrivalAddress = arrivalAddress;
         this.date = date;
         this.startingTime = startingTime;
         this.gateNumber = gate;
